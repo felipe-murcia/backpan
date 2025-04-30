@@ -16,16 +16,7 @@ async getById(id: any) {
 }
 
 async create( data:  Receta){
-    return await  Receta.create({
-        nombre: data.nombre,
-        temperatura: data.temperatura,
-        tiempo: data.tiempo,
-        conPicada: data.conPicada,
-        picada: data.picada,
-        observacion: data.observacion,
-        cantidad: data.cantidad,
-        ingredientes: data.ingredientes
-    });
+    return await  Receta.create(data);
 }
 
 async destroy(id: any) {

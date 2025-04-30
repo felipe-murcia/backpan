@@ -9,7 +9,7 @@ export default class extends BaseSchema {
       table.string('nombre').notNullable()
       table.integer('temperatura').notNullable()
       table.integer('tiempo').notNullable()
-      table.boolean('conPicada').notNullable()
+      table.boolean('con_picada').notNullable()
       table.integer('picada').notNullable()
       table.string('observacion', 500).notNullable()
       table.integer('cantidad').notNullable()

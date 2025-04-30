@@ -18,9 +18,14 @@ export default class RecetasController {
     }
 
     async create({ request, response }: HttpContext) {
-        const body:any = request.body()
-        const res = await this. recetaService.create(body) 
-        return response.json(res)
+        try {            
+            const body:any = request.body()
+            const res = await this. recetaService.create(body) 
+            return response.json(res)
+        } catch (error) {
+            console.log(error)
+            return response.status(500).json({ message: 'Internal server error', error: error.message })
+        }
     } 
 
     async show({ params, response }: HttpContext){
