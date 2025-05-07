@@ -18,3 +18,4 @@ router.get('/', async () => {
 const RecetasController = () => import('#controllers/recetas_controller')
 
 router.post('/recetas', [RecetasController, 'create'])
+router.get('/recetas', [RecetasController, 'index'])
