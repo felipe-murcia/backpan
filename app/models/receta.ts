@@ -27,7 +27,7 @@ export default class Receta extends BaseModel {
   declare cantidad: number
 
   @column({ columnName:'ingredientes' })
-  declare ingredientes: string[]
+  declare ingredientes: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

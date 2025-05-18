@@ -20,6 +20,7 @@ export default class RecetasController {
     async create({ request, response }: HttpContext) {
         try {            
             const body:any = request.body()
+            console.info(body)
             const res = await this. recetaService.create(body) 
             return response.json(res)
         } catch (error) {

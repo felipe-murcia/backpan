@@ -19,3 +19,5 @@ const RecetasController = () => import('#controllers/recetas_controller')
 
 router.post('/recetas', [RecetasController, 'create'])
 router.get('/recetas', [RecetasController, 'index'])
+router.put('/recetas/:id', [RecetasController, 'update'])
+router.delete('/recetas/:id', [RecetasController, 'delete'])

@@ -11,7 +11,7 @@ export default class extends BaseSchema {
       table.integer('tiempo').notNullable()
       table.boolean('con_picada').notNullable()
       table.integer('picada').notNullable()
-      table.string('observacion', 500).notNullable()
+      table.string('observacion', 500)
       table.integer('cantidad').notNullable()
       table.text('ingredientes').notNullable()
       table.timestamp('created_at')
