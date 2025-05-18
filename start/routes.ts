@@ -11,13 +11,19 @@ import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
   return {
-    hello: 'world',
+    hello: 'API - Opipan App',
   }
 })
 
 const RecetasController = () => import('#controllers/recetas_controller')
+const ProductosController = () => import('#controllers/productos_controller')
 
 router.post('/recetas', [RecetasController, 'create'])
 router.get('/recetas', [RecetasController, 'index'])
 router.put('/recetas/:id', [RecetasController, 'update'])
 router.delete('/recetas/:id', [RecetasController, 'delete'])
+
+router.post('/productos', [ProductosController, 'create'])
+router.get('/productos', [ProductosController, 'index'])
+router.put('/productos/:id', [ProductosController, 'update'])
+router.delete('/productos/:id', [ProductosController, 'delete'])
