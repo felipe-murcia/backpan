@@ -17,6 +17,7 @@ router.get('/', async () => {
 
 const RecetasController = () => import('#controllers/recetas_controller')
 const ProductosController = () => import('#controllers/productos_controller')
+const OrdenesController = () => import('#controllers/ordenes_controller')
 
 router.post('/recetas', [RecetasController, 'create'])
 router.get('/recetas', [RecetasController, 'index'])
@@ -29,3 +30,5 @@ router.get('/productos', [ProductosController, 'index'])
 router.get('/productos/:id', [ProductosController, 'show'])
 router.put('/productos/:id', [ProductosController, 'update'])
 router.delete('/productos/:id', [ProductosController, 'delete'])
+
+router.get('/ordenes', [OrdenesController, 'index'])
