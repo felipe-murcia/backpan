@@ -20,10 +20,12 @@ const ProductosController = () => import('#controllers/productos_controller')
 
 router.post('/recetas', [RecetasController, 'create'])
 router.get('/recetas', [RecetasController, 'index'])
+router.get('/recetas/:id', [RecetasController, 'show'])
 router.put('/recetas/:id', [RecetasController, 'update'])
 router.delete('/recetas/:id', [RecetasController, 'delete'])
 
 router.post('/productos', [ProductosController, 'create'])
 router.get('/productos', [ProductosController, 'index'])
+router.get('/productos/:id', [ProductosController, 'show'])
 router.put('/productos/:id', [ProductosController, 'update'])
 router.delete('/productos/:id', [ProductosController, 'delete'])
