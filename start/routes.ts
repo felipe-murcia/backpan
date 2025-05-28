@@ -32,3 +32,5 @@ router.put('/productos/:id', [ProductosController, 'update'])
 router.delete('/productos/:id', [ProductosController, 'delete'])
 
 router.get('/ordenes', [OrdenesController, 'index'])
+router.post('/ordenes', [OrdenesController, 'create'])
+router.put('/ordenes/:id', [OrdenesController, 'update'])

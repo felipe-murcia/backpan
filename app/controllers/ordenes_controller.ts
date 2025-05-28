@@ -19,20 +19,31 @@ export default class OrdenesController {
     }
     return response.json(orden);
   }
-  /*
-  async create({ request, response }: HttpContext) {
-    const orden = await this.ordenService.create(request.body);
-    return response.created(orden);
+  
+  async create({ request, response }: HttpContext) { 
+    try {
+          const body:any = request.body()
+          console.info(body)
+          const res = await this.ordenService.create(body) 
+          return response.json(res)
+      } catch (error) {
+          console.log(error)
+          return response.status(500).json({ message: 'Internal server error', error: error.message })
+      }
   }
-
+    
   async update({ params, request, response }: HttpContext) {
-    const orden = await this.ordenService.update(params.id, request.body);
-    if (!orden) {
-      return response.notFound();
+    try {
+      const body:any = request.body()
+      console.info(body)
+      const orden = await this.ordenService.update(params.id, body);
+      return response.json(orden)
+    } catch (error) {
+        console.log(error)
+        return response.status(500).json({ message: 'Internal server error', error: error.message })
     }
-    return response.json(orden);
   }
-
+/*
   async destroy({ params, response }: HttpContext) {
     const orden = await this.ordenService.destroy(params.id);
     if (!orden) {
