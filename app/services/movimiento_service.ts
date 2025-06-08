@@ -17,21 +17,23 @@ export class MovimientoService {
 
       try {
         
-        Movimiento.create(data)
+        let res = Movimiento.create(data)
         // Actualizar la cantidad del producto
         // dependiendo del tipo de movimiento (ingreso o salida)
         const product = await Producto.find(data.productoId);
-        
+
         if (data.tipo) {
           // Ingreso
-          product!.cantidad += data.cantidad;
+          product!.cantidad = product!.cantidad + data.cantidad
           product!.save();
         }
         else {
           // Salida
-          product!.cantidad -= data.cantidad;
+          product!.cantidad = product!.cantidad - data.cantidad
           product!.save();
         }
+        console.log('finalizado')
+        return res;
 
       } catch (error) {
         console.error('Error creating movimiento:', error)
