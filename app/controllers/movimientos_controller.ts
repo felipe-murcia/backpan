@@ -8,7 +8,7 @@ export default class MovimientosController {
 
     constructor(private movimientoService: MovimientoService) {}
 
-    async index({ params, response }: HttpContext) {
+    async index({ response }: HttpContext) {
         const movimiento = await this.movimientoService.get();
         console.log('perfecto')
         if (!movimiento) {
